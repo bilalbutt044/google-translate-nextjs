@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
+import styles from "./langauge.module.css";
 
 const languages = [
   { label: "English", value: "/auto/en" },
@@ -52,13 +53,15 @@ const LanguageDrawer = ({}) => {
   };
 
   return (
-    <select onChange={langChange} value={selected}>
-      {languages.map((lang) => (
-        <option value={lang.value} key={lang.value}>
-          {lang.label}
-        </option>
-      ))}
-    </select>
+    <>
+      <select onChange={langChange} value={selected}>
+        {languages.map((lang) => (
+          <option value={lang.value} key={lang.value}>
+            {lang.label}
+          </option>
+        ))}
+      </select>
+    </>
   );
 };
 
